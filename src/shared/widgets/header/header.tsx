@@ -1,25 +1,61 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Link from "next/link";
 import Logo from "./logo";
 import NavItem from "./NavItem";
 import { navItems } from "@/app/configs/constants";
 import Toolbox from "./Toolbox";
+import {
+  Navbar, 
+  NavbarBrand, 
+  NavbarContent, 
+  NavbarItem, 
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem
+} from "@nextui-org/react";
 export default function Header() {
+  const [MenuOpen, setMenuOpen] = useState<true | false>(false)
+  //className="w-full sticky top-0 left-0 z-[10] border-b border-b[#02010A] px-5 text-blue-600 bg-gray-100 flex items-center justify-between"
   return (
-    <header className="w-full sticky top-0 left-0 z-[10] border-b border-b[#02010A] px-5 flex items-center justify-between text-blue-600 bg-gray-100">
-      <Link href="/">
-        <Logo />
-      </Link>
-      <nav className="flex-1 max-w-lg flex items-center justify-evenly">
-        {navItems.map((item: NavItems, index: number) => {
-          return (
-            <NavItem url={"/"} index={index}>
-              <p>{item.title}</p>
-            </NavItem>
-          );
-        })}
-      </nav>
-      <Toolbox />
+    <header className="w-full" >
+      <Navbar isBordered onMenuOpenChange={setMenuOpen} className="flex items-center flex-wrap">
+        <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={MenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+        <NavbarBrand>
+          <Logo>
+            <Link href="/"></Link>
+          </Logo>
+        </NavbarBrand>
+        </NavbarContent>
+        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+          {navItems.map((item : NavItems, index : number) => {
+            return(
+              <NavbarItem>
+                <NavItem index = {index} url="">{item.title}</NavItem>
+              </NavbarItem>
+            )
+          })}
+        </NavbarContent>
+        <NavbarMenu>
+        {navItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              className="w-full"
+              href="#"
+            >
+              {item.title}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+        <NavbarItem>
+          <Toolbox></Toolbox>
+        </NavbarItem>
+      </Navbar>
     </header>
   );
 }
