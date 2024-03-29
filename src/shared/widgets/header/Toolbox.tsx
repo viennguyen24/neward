@@ -1,9 +1,14 @@
 import React from "react";
 import { Button, ButtonGroup } from "@nextui-org/react";
 import Link from "next/link";
-export default function Toolbox() {
+
+interface Props{
+  classNames?: string,
+}
+
+export default function Toolbox({classNames} : Props) {
   return (
-    <div>
+    <div className={classNames}>
       <Button color="primary" size="lg" radius="sm">
         Start Trial
       </Button>
