@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    domains: ["media.beehiiv.com"], // Add your domain here
+  },
+};
 
 export default nextConfig;
