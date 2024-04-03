@@ -8,6 +8,7 @@ type PartnersTypes = {
 type PlanType = {
   title: string,
   perk:string[],
+  description: string,
 };
 
 type DashboardSideBarTypes = {

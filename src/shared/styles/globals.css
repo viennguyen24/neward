@@ -95,5 +95,5 @@ section{
   display: grid;
   margin-inline: auto;
   grid-template-columns: repeat(auto-fit, minmax(min(20rem,100%), 1fr));
-  gap:2rem;
+  gap:1.5rem;
 }
