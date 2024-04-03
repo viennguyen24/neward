@@ -19,10 +19,10 @@ const Highlight: React.FC<HighlighProps> = ({
         <Image
           src={url}
           alt="Highlighted image"
-          width={imgWidth ? imgWidth : 400}
-          height={imgHeight ? imgHeight : 400}
+          width={imgWidth ? imgWidth : 800}
+          height={imgHeight ? imgHeight : 800}
         />
-        <div className="justify-self-end highlight-text flex-1 md:flex-[40%] flex flex-col items-center justify-center gap-10 text-center">
+        <div className="justify-self-end highlight-text flex-1 max-w-[60%] md:flex-[40%] flex flex-col items-center justify-center gap-10 text-center">
           {children}
         </div>
       </div>

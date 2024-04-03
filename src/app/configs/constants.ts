@@ -33,54 +33,37 @@ export const partners: PartnersTypes[] = [
     url: "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,onerror=redirect,format=auto,width=1080,quality=75/www/company-logos-cyber-ink-bg/CompanyLogosCyberInkBG/awa.svg",
   },
 ];
+export const Plans:PlanType[]=[
+  {
+    title: "Free Plan",
+    perk: ["Up to 2,500 subscribers", "Unlimited sends", "Custom newsletter","Newsletter analytics"]
+  },
+  {
+    title: "Grow Plan",
+    perk: ["Up to 10,000 subscribers", "Custom domains", "API access", "Newsletter community"  ],
+  },
+  {
+    title: "Scale Plan",
+    perk: ["Up to 100,000 subscribers", "Referal program", "AI support", "Advanced support system",  "Ad Network"],
+  }
+]
+// export const freePlan: PlanType[] = [
+//   {
+//     perk: ["Up to 2,500 subscribers", "Unlimited sends", "Custom newsletter","Newsletter analytics"]
+//   },
+// ];
 
-export const freePlan: PlanType[] = [
-  {
-    title: "Up to 2,500 subscribers",
-  },
-  {
-    title: "Unlimited sends",
-  },
-  {
-    title: "Custom newsletter",
-  },
-  {
-    title: "Newsletter analytics",
-  },
-];
+// export const GrowPlan: PlanType[] = [
+//   {
+//     perk: ["Up to 10,000 subscribers", "Custom domains", "API access", "Newsletter community"  ],
+//   },
+// ];
 
-export const GrowPlan: PlanType[] = [
-  {
-    title: "Up to 10,000 subscribers",
-  },
-  {
-    title: "Custom domains",
-  },
-  {
-    title: "API access",
-  },
-  {
-    title: "Newsletter community",
-  },
-];
-
-export const scalePlan: PlanType[] = [
-  {
-    title: "Up to 100,000 subscribers",
-  },
-  {
-    title: "Referal program",
-  },
-  {
-    title: "AI support",
-  },
-  {
-    title: "Advanced support system",
-  },
-  {
-    title: "Ad Network",
-  },
-];
+// export const scalePlan: PlanType[] = [
+//   {
+//     perk: ["Up to 100,000 subscribers", "Referal program", "AI support", "Advanced support system",  "Ad Network"],
+//   },
+// ];
 
 export const sideBarActiveItem = atom<string>("/dashboard");
 

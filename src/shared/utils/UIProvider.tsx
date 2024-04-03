@@ -7,7 +7,7 @@ import React from "react";
 interface ProviderProps {
   children: React.ReactNode;
 }
-export default function Providers({ children }: ProviderProps) {
+export default function UIProviders({ children }: ProviderProps) {
   const pathname = usePathname(); //accessing the current URL pathname in a Next.js application.
   return (
     //For NextUI to work correctly, we need to set up the NextUIProvider at the root of our application.
