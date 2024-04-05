@@ -97,3 +97,7 @@ section{
   grid-template-columns: repeat(auto-fit, minmax(min(20rem,100%), 1fr));
   gap:1.5rem;
 }
+h1{
+  z-index:1000000000000000000000000000000000000000000000000000000000000000000000;
+  margin-block: 2rem;
+}

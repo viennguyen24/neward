@@ -52,7 +52,7 @@ export default function Home() {
         </>
       </Highlight>
       <CardList content = {Plans} iconFooter={<FaArrowRight />} iconHeader={<ImPriceTags />}>
-        <h1 className="color-title text-6xl">The best shit ever</h1>
+        <h1 className="color-title text-6xl">Discover tailored pricing solutions <span className="font-bold">designed just for you</span></h1>
         <p className="color-subtitle">The best shit you can ask for</p>
       </CardList>
     </>

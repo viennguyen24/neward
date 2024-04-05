@@ -5,6 +5,7 @@ import Logo from "./logo";
 import NavItem from "./NavItem";
 import { navItems } from "@/app/configs/constants";
 import Toolbox from "./Toolbox";
+import Cart from "../../../modules/home/cart"
 import {
   Navbar,
   NavbarBrand,
@@ -59,6 +60,12 @@ export default function Header() {
         <NavbarItem>
           <Toolbox classNames="justify-self-end"></Toolbox>
         </NavbarItem>
+      </NavbarContent>
+      <NavbarContent>
+        <Cart>
+          <h1>Test</h1>
+          <p>Test2</p>
+        </Cart>
       </NavbarContent>
     </Navbar>
   );
