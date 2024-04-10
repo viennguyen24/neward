@@ -33,23 +33,39 @@ export const partners: PartnersTypes[] = [
     url: "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,onerror=redirect,format=auto,width=1080,quality=75/www/company-logos-cyber-ink-bg/CompanyLogosCyberInkBG/awa.svg",
   },
 ];
-export const Plans:PlanType[]=[
+export const Plans: PlanType[] = [
   {
     title: "Free Plan",
-    perk: ["Up to 2,500 subscribers", "Unlimited sends", "Custom newsletter","Newsletter analytics"],
-    description : "Ideal for individuals or small businesses starting out.",
+    perk: [
+      "Up to 2,500 subscribers",
+      "Unlimited sends",
+      "Custom newsletter",
+      "Newsletter analytics",
+    ],
+    description: "Ideal for individuals or small businesses starting out.",
   },
   {
     title: "Grow Plan",
-    perk: ["Up to 10,000 subscribers", "Custom domains", "API access", "Newsletter community"  ],
+    perk: [
+      "Up to 10,000 subscribers",
+      "Custom domains",
+      "API access",
+      "Newsletter community",
+    ],
     description: "Tailored for expanding businesses by advanced features.",
   },
   {
     title: "Scale Plan",
-    perk: ["Up to 100,000 subscribers", "Referal program", "AI support", "Advanced support system",  "Ad Network"],
-    description : "Designed to support a significant subscriber bases.",
-  }
-]
+    perk: [
+      "Up to 100,000 subscribers",
+      "Referal program",
+      "AI support",
+      "Advanced support system",
+      "Ad Network",
+    ],
+    description: "Designed to support a significant subscriber bases.",
+  },
+];
 // export const freePlan: PlanType[] = [
 //   {
 //     perk: ["Up to 2,500 subscribers", "Unlimited sends", "Custom newsletter","Newsletter analytics"]

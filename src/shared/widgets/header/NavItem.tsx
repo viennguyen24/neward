@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 interface NavItemProps {
-  index: number;
+  index?: number;
   url: string;
   children?: React.ReactNode;
 }

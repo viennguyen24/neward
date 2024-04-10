@@ -4,12 +4,13 @@ import Branding from "./branding";
 import Features from "./features";
 import CardList from "./cardList";
 import TextCard from "./TextCard";
-
+import Footer from "../../shared/widgets/footer/footer";
 import { FaArrowRight } from "react-icons/fa";
 import { ImPriceTags } from "react-icons/im";
-import {Plans} from "../../app/configs/constants"
+import { Plans } from "../../app/configs/constants";
 import { Button } from "@nextui-org/react";
 import { partners } from "@/app/configs/constants";
+import { navItems } from "../../app/configs/constants";
 import Highlight from "./highlight";
 export default function Home() {
   return (
@@ -37,9 +38,7 @@ export default function Home() {
       </Features>
       <Highlight url="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,onerror=redirect,format=auto,width=1080,quality=75/www/homepage/Publish.png">
         <>
-          <h1 className="text-6xl color-title  mb-5">
-            Build & Innovate
-          </h1>
+          <h1 className="text-6xl color-title  mb-5">Build & Innovate</h1>
           <p className="color-subtitle z-[-1]">
             Powerful tools for digital communications and graphic storytelling
           </p>
@@ -51,10 +50,22 @@ export default function Home() {
           </Button>
         </>
       </Highlight>
-      <CardList content = {Plans} iconFooter={<FaArrowRight />} iconHeader={<ImPriceTags />}>
-        <h1 className="color-title text-6xl">Discover tailored pricing solutions <span className="font-bold">designed just for you</span></h1>
+      <CardList
+        content={Plans}
+        iconFooter={<FaArrowRight />}
+        iconHeader={<ImPriceTags />}
+      >
+        <h1 className="color-title text-6xl">
+          Discover tailored pricing solutions{" "}
+          <span className="font-bold">designed just for you</span>
+        </h1>
         <p className="color-subtitle">The best shit you can ask for</p>
       </CardList>
+      <Footer
+        links={navItems}
+        copyright="© 2024 YourWebsiteName. All rights reserved. | Designed and developed by YourCompanyName."
+        className="md:px-10 py-18 gap-20"
+      />
     </>
   );
 }
