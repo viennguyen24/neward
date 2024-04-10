@@ -1,5 +1,5 @@
 import React from "react"
-import TextCard from "./TextCard"
+import TextCard from "./textCard"
 import { TbPoint } from "react-icons/tb";
 interface cardListProps{
     children: React.ReactNode[],

@@ -3,7 +3,7 @@ import Hero from "./hero";
 import Branding from "./branding";
 import Features from "./features";
 import CardList from "./cardList";
-import TextCard from "./TextCard";
+import TextCard from "./textCard";
 import Footer from "../../shared/widgets/footer/footer";
 import { FaArrowRight } from "react-icons/fa";
 import { ImPriceTags } from "react-icons/im";
