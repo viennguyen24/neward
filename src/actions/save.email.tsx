@@ -1,5 +1,5 @@
 import Email from "@/models/email.mongoose";
-import { connectDb } from "@/shared/utils/mongoose";
+import { connectDb } from "@/models/mongoose";
 
 interface EmailProps {
   emailID: string;

@@ -1,6 +1,6 @@
 import React from "react";
-import InputForm from "@/modules/home/input";
-import NavItem from "../header/NavItem";
+import InputForm from "@/components/inputForm";
+import NavItem from "./NavItem";
 import { Button } from "@nextui-org/react";
 import { CiMail } from "react-icons/ci";
 import { cn } from "@/shared/utils/functions";

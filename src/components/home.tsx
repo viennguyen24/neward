@@ -1,16 +1,16 @@
-import Header from "../../shared/widgets/header/header";
+import Header from "./header";
 import Hero from "./hero";
 import Branding from "./branding";
 import Features from "./features";
 import CardList from "./cardList";
 import TextCard from "./TextCard";
-import Footer from "../../shared/widgets/footer/footer";
+import Footer from "./footer";
 import { FaArrowRight } from "react-icons/fa";
 import { ImPriceTags } from "react-icons/im";
-import { Plans } from "../../app/configs/constants";
+import { Plans } from "../app/configs/constants";
 import { Button } from "@nextui-org/react";
 import { partners } from "@/app/configs/constants";
-import { navItems } from "../../app/configs/constants";
+import { navItems } from "../app/configs/constants";
 import Highlight from "./highlight";
 export default function Home() {
   return (

@@ -5,7 +5,7 @@ import Logo from "./logo";
 import NavItem from "./NavItem";
 import { navItems } from "@/app/configs/constants";
 import Toolbox from "./Toolbox";
-import Cart from "../../../modules/home/cart";
+import Cart from "./cart";
 import {
   Navbar,
   NavbarBrand,

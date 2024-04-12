@@ -19,9 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <StateProviders>
-          <UIProviders>
-            {children}
-          </UIProviders>
+          <UIProviders>{children}</UIProviders>
         </StateProviders>
       </body>
     </html>
