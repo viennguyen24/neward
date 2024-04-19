@@ -3,28 +3,43 @@ import React from "react";
 import { Button, Input } from "@nextui-org/react";
 import { FaArrowRight } from "react-icons/fa";
 import { useRouter } from "next/navigation";
-const Register: React.FC = () => {
+import { useForm, Resolver } from "react-hook-form";
+import axiosInstance from "@/shared/utils/http";
+import Link from "next/link";
+
+type FormValues = {
+  email: string;
+  username: string;
+  password: string;
+};
+
+const Login: React.FC = () => {
+  const formSubmit = (data: FormValues) => {
+    axiosInstance
+      .post("/auth/register", data)
+      .then((response) => console.log(`This is a response: ${response}`))
+      .catch((err) => console.log(err));
+    // .then(() => router.push("/"))
+    // .catch((err) => console.log(err));
+  };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>({
+    defaultValues: { email: "", username: "", password: "" },
+  });
   const router = useRouter();
   return (
     <section className="flex flex-col items-center gap-10 my-0">
       <div className="text-center">
-        <h1 className="color-title text-4xl font-bold">Welcome to Neward!</h1>
-        <p className="color-subtitle text-2xl">
-          Start your digital communication with the most powerful SaaS tool
-        </p>
+        <h1 className="color-title text-4xl font-bold">Welcome back!</h1>
       </div>
-      <form className="flex flex-col items-center gap-2 text-2xl">
-        <Input
-          isRequired
-          type="username"
-          label="Username"
-          labelPlacement="inside"
-          radius="sm"
-          variant="bordered"
-          color="primary"
-          placeholder="Enter your username"
-          size="lg"
-        />
+      <form
+        className="flex flex-col items-center gap-2 text-2xl"
+        onSubmit={handleSubmit(formSubmit)}
+      >
         <Input
           isRequired
           type="email"
@@ -35,7 +50,32 @@ const Register: React.FC = () => {
           color="primary"
           placeholder="Enter your email"
           size="lg"
+          {...register("email", {
+            required: {
+              value: true,
+              message: "Email is required",
+            },
+          })}
         />
+        {errors?.email && <p>{errors.email.message}</p>}
+        <Input
+          isRequired
+          type="username"
+          label="Username"
+          labelPlacement="inside"
+          radius="sm"
+          variant="bordered"
+          color="primary"
+          placeholder="Enter your username"
+          size="lg"
+          {...register("username", {
+            required: {
+              value: true,
+              message: "Username is required",
+            },
+          })}
+        />
+        {errors?.username && <p>{errors.username.message}</p>}
         <Input
           isRequired
           type="password"
@@ -46,16 +86,18 @@ const Register: React.FC = () => {
           color="primary"
           placeholder="Enter your password"
           size="lg"
+          {...register("password", {
+            required: {
+              value: true,
+              message: "Password is required",
+            },
+            minLength: {
+              value: 8,
+              message: "Password must be at least 8 characters long",
+            },
+          })}
         />
-        <Input
-          isRequired
-          type="password"
-          radius="sm"
-          variant="bordered"
-          color="primary"
-          placeholder="Re-enter your password"
-          size="lg"
-        />
+        {errors?.password && <p>{errors.password.message}</p>}
         <Button
           endContent={<FaArrowRight />}
           color="primary"
@@ -64,19 +106,14 @@ const Register: React.FC = () => {
           type="submit"
           className="my-4"
         >
-          Register
+          Sign up
         </Button>
       </form>
-      <p className="color-subtitle">
+      <Link href="/auth/login">
         Already have an account?{" "}
-        <span
-          className="color-title"
-          onClick={() => router.push("/auth/login")}
-        >
-          Login now!
-        </span>
-      </p>
+        <span className="color-title">Sign up now</span>
+      </Link>
     </section>
   );
 };
-export default Register;
+export default Login;

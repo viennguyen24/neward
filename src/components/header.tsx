@@ -17,9 +17,13 @@ import {
 } from "@nextui-org/react";
 export default function Header() {
   const [MenuOpen, setMenuOpen] = useState<true | false>(false);
-  //className="w-full sticky top-0 left-0 z-[10] border-b border-b[#02010A] px-5 text-blue-600 bg-gray-100 flex items-center justify-between"
   return (
-    <Navbar isBordered onMenuOpenChange={setMenuOpen} className="w-full">
+    <Navbar
+      position="static"
+      isBordered
+      onMenuOpenChange={setMenuOpen}
+      className="w-full"
+    >
       <NavbarContent justify="start">
         <NavbarMenuToggle
           aria-label={MenuOpen ? "Close menu" : "Open menu"}
